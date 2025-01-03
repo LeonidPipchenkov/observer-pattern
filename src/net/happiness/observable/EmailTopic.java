@@ -2,6 +2,7 @@ package net.happiness.observable;
 
 import net.happiness.observer.Observer;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -10,8 +11,8 @@ public class EmailTopic implements Subject {
     private final List<Observer> observers;
     private String message;
 
-    public EmailTopic(List<Observer> observers) {
-        this.observers = observers;
+    public EmailTopic() {
+        observers = new ArrayList<>();
     }
 
     @Override
@@ -42,7 +43,7 @@ public class EmailTopic implements Subject {
     }
 
     @Override
-    public Object getUpdate(Observer observer) {
+    public Object getUpdate() {
         return message;
     }
 
